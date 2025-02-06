@@ -54,3 +54,9 @@
 2. This and Static Keyword, Is Operator and Readonly
 3. Practice Problems on OOP's Concept
 ---------------------------------------------------------------------------------------------------------------------
+06-02-2025
+
+1. Has-a Relationship (Association, Aggregation and Composition)
+2. Design Problems (Class Digram, Object Digram, Sequence Digram)
+3. Problem Statements on Has-a Relationship and Design Problems
+2. 
