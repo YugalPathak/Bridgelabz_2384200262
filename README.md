@@ -58,5 +58,4 @@
 
 1. Has-a Relationship (Association, Aggregation and Composition)
 2. Design Problems (Class Digram, Object Digram, Sequence Digram)
-3. Problem Statements on Has-a Relationship and Design Problems
-2. 
+3. Problem Statements on Has-a Relationship and Design Problems 
