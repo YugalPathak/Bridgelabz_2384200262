@@ -59,3 +59,11 @@
 1. Has-a Relationship (Association, Aggregation and Composition)
 2. Design Problems (Class Digram, Object Digram, Sequence Digram)
 3. Problem Statements on Has-a Relationship and Design Problems 
+---------------------------------------------------------------------------------------------------------------------
+08-02-2025
+
+1. Inheritance Concepts
+2. Polymorphism
+3. Method Overriding
+4. Practice Problems on Inheritance
+---------------------------------------------------------------------------------------------------------------------
