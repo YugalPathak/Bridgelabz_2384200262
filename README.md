@@ -67,3 +67,11 @@
 3. Method Overriding
 4. Practice Problems on Inheritance
 ---------------------------------------------------------------------------------------------------------------------
+10-02-2025
+
+1. Encapsulation
+2. Polymorphism implementation of types
+3. Interface
+4. Abstract Class
+5. Practice Problems on Abstraction,Encapsulation and Polymorphism
+---------------------------------------------------------------------------------------------------------------------
