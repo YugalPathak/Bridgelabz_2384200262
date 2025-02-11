@@ -75,3 +75,9 @@
 4. Abstract Class
 5. Practice Problems on Abstraction,Encapsulation and Polymorphism
 ---------------------------------------------------------------------------------------------------------------------
+11-02-2025
+
+1. Linked List
+2. Single, Double, Circular Linked List
+3. Practice Problems on Linked List
+---------------------------------------------------------------------------------------------------------------------
