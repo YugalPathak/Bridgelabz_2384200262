@@ -88,3 +88,9 @@
 3. Dictionary
 4. Practice Problems on Stack,Queue and Dictionary
 ---------------------------------------------------------------------------------------------------------------------
+14-02-2025
+
+1. Sorting Algorithms - Bubble,Merge,Quick,Insertion,count,Heap,Selection
+2. Practice Problems
+3. Recursion 
+---------------------------------------------------------------------------------------------------------------------
