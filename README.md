@@ -94,3 +94,10 @@
 2. Practice Problems
 3. Recursion 
 ---------------------------------------------------------------------------------------------------------------------
+15-02-2024
+
+1. Searching Algorithms - Linear and Binary
+2. String Builder
+3. File Operations
+4. Practice Problems on Searching String Buildr and File Operations
+---------------------------------------------------------------------------------------------------------------------
