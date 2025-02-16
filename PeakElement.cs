@@ -4,13 +4,13 @@ class Program
 {
     static void Main()
     {
-        int[] rotatedArray = { 4, 5, 6, 7, 0, 1, 2 };
-        int rotationIndex = FindRotationPoint(rotatedArray);
+        int[] array = { 1, 3, 5, 4, 2 };
+        int peakIndex = FindPeakElement(array);
         
-        Console.WriteLine($"The smallest element is at index: {rotationIndex}");
+        Console.WriteLine($"A peak element is at index: {peakIndex}, value: {array[peakIndex]}");
     }
     
-    static int FindRotationPoint(int[] arr)
+    static int FindPeakElement(int[] arr)
     {
         int left = 0, right = arr.Length - 1;
         
@@ -18,13 +18,13 @@ class Program
         {
             int mid = left + (right - left) / 2;
             
-            if (arr[mid] > arr[right])
+            if (arr[mid] > arr[mid + 1])
             {
-                left = mid + 1;
+                right = mid;
             }
             else
             {
-                right = mid;
+                left = mid + 1;
             }
         }
         return left;
