@@ -3,7 +3,7 @@
 19-01-2025
 
 1. Basic Arithmetic Calculations Programs
-2. Practice Problem 1
+2. Practice Problems on basic structure of a program
 3. Structure of a Class
 ---------------------------------------------------------------------------------------------------------------------
 22-01-2025
@@ -91,7 +91,7 @@
 14-02-2025
 
 1. Sorting Algorithms - Bubble,Merge,Quick,Insertion,count,Heap,Selection
-2. Practice Problems
+2. Practice Problems on Sorting Algorithms
 3. Recursion 
 ---------------------------------------------------------------------------------------------------------------------
 15-02-2024
@@ -101,3 +101,12 @@
 3. File Operations
 4. Practice Problems on Searching String Buildr and File Operations
 ---------------------------------------------------------------------------------------------------------------------
+17-02-2025
+
+1. Time Complexity
+2. Space Complexity
+3. Calculate and Compare performance on basis of complexity
+4. Practice Problems on Comparing Complexities
+5. Approaches to reduce complexity
+---------------------------------------------------------------------------------------------------------------------
+ 
