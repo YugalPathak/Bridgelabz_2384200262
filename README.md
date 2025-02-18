@@ -109,4 +109,10 @@
 4. Practice Problems on Comparing Complexities
 5. Approaches to reduce complexity
 ---------------------------------------------------------------------------------------------------------------------
- 
+18-02-2025
+
+1. Generic class
+2. Override ToString() Method
+3. Lambda expression
+4. Practice Problems on Generic Class 
+---------------------------------------------------------------------------------------------------------------------
