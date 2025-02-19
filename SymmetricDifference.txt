@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Define two sets
+        HashSet<int> set1 = new HashSet<int> { 1, 2, 3 };
+        HashSet<int> set2 = new HashSet<int> { 3, 4, 5 };
+
+        // Compute Symmetric Difference
+        HashSet<int> symmetricDiff = GetSymmetricDifference(set1, set2);
+
+        // Print result
+        Console.WriteLine("Symmetric Difference: " + string.Join(", ", symmetricDiff));
+    }
+
+    static HashSet<int> GetSymmetricDifference(HashSet<int> set1, HashSet<int> set2)
+    {
+        HashSet<int> result = new HashSet<int>(set1); // Copy set1
+        result.SymmetricExceptWith(set2); // Perform symmetric difference
+        return result;
+    }
+}

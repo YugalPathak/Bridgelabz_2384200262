@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Input list of strings
+        List<string> fruits = new List<string> { "apple", "banana", "apple", "orange" };
+
+        // Function call to get frequency count
+        Dictionary<string, int> frequency = GetFrequency(fruits);
+
+        // Printing the results
+        foreach (var item in frequency)
+        {
+            Console.WriteLine($"{item.Key}: {item.Value}");
+        }
+    }
+
+    // Function to count the frequency of each element in the list
+    static Dictionary<string, int> GetFrequency(List<string> items)
+    {
+        // Dictionary to store element counts
+        Dictionary<string, int> frequencyDict = new Dictionary<string, int>();
+
+        // Loop through each item in the list
+        foreach (string item in items)
+        {
+            // If item already exists in dictionary, increment its count
+            if (frequencyDict.ContainsKey(item))
+            {
+                frequencyDict[item]++;
+            }
+            else
+            {
+                // If item is not in dictionary, add it with count 1
+                frequencyDict[item] = 1;
+            }
+        }
+
+        // Return the frequency dictionary
+        return frequencyDict;
+    }
+}

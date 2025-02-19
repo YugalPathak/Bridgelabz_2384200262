@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Define two sets
+        HashSet<int> subset = new HashSet<int> { 2, 3 };
+        HashSet<int> mainSet = new HashSet<int> { 1, 2, 3, 4 };
+
+        // Check if subset is a subset of mainSet
+        bool isSubset = IsSubset(subset, mainSet);
+
+        // Print result
+        Console.WriteLine("Is subset? " + isSubset);
+    }
+
+    static bool IsSubset(HashSet<int> subset, HashSet<int> mainSet)
+    {
+        return subset.IsSubsetOf(mainSet); // Built-in method for subset check
+    }
+}

@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string filePath = "sample.txt"; // Input file path
+
+        // Read file content
+        string text = File.ReadAllText(filePath);
+
+        // Count word frequency
+        Dictionary<string, int> wordFrequency = CountWordFrequency(text);
+
+        // Print result
+        foreach (var kvp in wordFrequency)
+        {
+            Console.WriteLine($"\"{kvp.Key}\": {kvp.Value}");
+        }
+    }
+
+    static Dictionary<string, int> CountWordFrequency(string text)
+    {
+        Dictionary<string, int> frequencyDict = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+        // Remove punctuation & split into words
+        string[] words = Regex.Split(text.ToLower(), @"\W+");
+
+        foreach (string word in words)
+        {
+            if (!string.IsNullOrWhiteSpace(word))
+            {
+                if (frequencyDict.ContainsKey(word))
+                    frequencyDict[word]++;
+                else
+                    frequencyDict[word] = 1;
+            }
+        }
+
+        return frequencyDict;
+    }
+}

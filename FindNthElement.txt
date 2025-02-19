@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Creating a linked list
+        LinkedList<char> list = new LinkedList<char>(new char[] { 'A', 'B', 'C', 'D', 'E' });
+
+        int N = 2; // Finding the 2nd element from the end
+
+        char result = FindNthFromEnd(list, N);
+
+        Console.WriteLine($"Nth element from the end: {result}");
+    }
+
+    static char FindNthFromEnd(LinkedList<char> list, int N)
+    {
+        LinkedListNode<char> first = list.First; // Slow pointer
+        LinkedListNode<char> second = list.First; // Fast pointer
+
+        // Move 'second' N steps ahead
+        for (int i = 0; i < N; i++)
+        {
+            if (second == null) 
+                throw new ArgumentException("N is larger than the list size.");
+            second = second.Next;
+        }
+
+        // Move both pointers until 'second' reaches the end
+        while (second != null)
+        {
+            first = first.Next;
+            second = second.Next;
+        }
+
+        return first.Value; // 'first' is now at the Nth node from the end
+    }
+}

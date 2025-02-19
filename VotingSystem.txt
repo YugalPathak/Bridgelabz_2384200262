@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class VotingSystem
+{
+    private Dictionary<string, int> voteCount = new Dictionary<string, int>(); // Candidate-wise vote count
+    private SortedDictionary<string, int> sortedResults = new SortedDictionary<string, int>(); // Sorted results
+    private LinkedList<KeyValuePair<string, int>> voteOrder = new LinkedList<KeyValuePair<string, int>>(); // Voting order
+
+    // Vote cast method
+    public void CastVote(string candidate)
+    {
+        if (voteCount.ContainsKey(candidate))
+        {
+            voteCount[candidate]++;
+        }
+        else
+        {
+            voteCount[candidate] = 1;
+        }
+
+        // Adding
+        voteOrder.AddLast(new KeyValuePair<string, int>(candidate, voteCount[candidate]));
+
+        // Sorted dictionary update
+        sortedResults[candidate] = voteCount[candidate];
+    }
+
+    // Vote counts retrieve
+    public Dictionary<string, int> GetVoteCounts()
+    {
+        return new Dictionary<string, int>(voteCount);
+    }
+
+    // Votes sorted order
+    public SortedDictionary<string, int> GetSortedResults()
+    {
+        return new SortedDictionary<string, int>(sortedResults);
+    }
+
+    // Maintaining original order of votes
+    public List<KeyValuePair<string, int>> GetVoteOrder()
+    {
+        return voteOrder.ToList();
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        VotingSystem votingSystem = new VotingSystem();
+
+        // Votes cast 
+        votingSystem.CastVote("Alice");
+        votingSystem.CastVote("Bob");
+        votingSystem.CastVote("Alice");
+        votingSystem.CastVote("Charlie");
+        votingSystem.CastVote("Alice");
+        votingSystem.CastVote("Bob");
+
+        //  Display total vote count
+        Console.WriteLine("\n Total Votes:");
+        foreach (var vote in votingSystem.GetVoteCounts())
+        {
+            Console.WriteLine($"{vote.Key}: {vote.Value}");
+        }
+
+        //  Display sorted results
+        Console.WriteLine("\n Sorted Results:");
+        foreach (var vote in votingSystem.GetSortedResults())
+        {
+            Console.WriteLine($"{vote.Key}: {vote.Value}");
+        }
+
+        //  Display vote order
+        Console.WriteLine("\n Vote Order:");
+        foreach (var vote in votingSystem.GetVoteOrder())
+        {
+            Console.WriteLine($"{vote.Key} -> {vote.Value}");
+        }
+    }
+}

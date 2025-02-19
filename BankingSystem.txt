@@ -1,0 +1,143 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class BankingSystem
+{
+    private Dictionary<int, double> accountBalances = new Dictionary<int, double>(); // Account balances
+    private SortedDictionary<double, List<int>> sortedBalances = new SortedDictionary<double, List<int>>(); // Sorted by balance
+    private Queue<Tuple<int, double>> withdrawalQueue = new Queue<Tuple<int, double>>(); // Withdrawal requests
+
+    //  Create a new account
+    public void CreateAccount(int accountId, double balance)
+    {
+        if (!accountBalances.ContainsKey(accountId))
+        {
+            accountBalances[accountId] = balance;
+
+            if (!sortedBalances.ContainsKey(balance))
+                sortedBalances[balance] = new List<int>();
+
+            sortedBalances[balance].Add(accountId);
+        }
+    }
+    //  Deposit money
+    public void Deposit(int accountId, double amount)
+    {
+        if (accountBalances.ContainsKey(accountId))
+        {
+            double oldBalance = accountBalances[accountId];
+            accountBalances[accountId] += amount;
+            UpdateSortedBalances(accountId, oldBalance, accountBalances[accountId]);
+        }
+    }
+
+    //  Withdraw money (adds request to queue)
+    public void RequestWithdrawal(int accountId, double amount)
+    {
+        if (accountBalances.ContainsKey(accountId) && accountBalances[accountId] >= amount)
+        {
+            withdrawalQueue.Enqueue(new Tuple<int, double>(accountId, amount));
+        }
+        else
+        {
+            Console.WriteLine($" Insufficient balance for Account {accountId}.");
+        }
+    }
+
+    //  Process withdrawal requests
+    public void ProcessWithdrawals()
+    {
+        while (withdrawalQueue.Count > 0)
+        {
+            var request = withdrawalQueue.Dequeue();
+            int accountId = request.Item1;
+            double amount = request.Item2;
+
+            if (accountBalances[accountId] >= amount)
+            {
+                double oldBalance = accountBalances[accountId];
+                accountBalances[accountId] -= amount;
+                UpdateSortedBalances(accountId, oldBalance, accountBalances[accountId]);
+                Console.WriteLine($" Withdrawal of ${amount} processed for Account {accountId}. New Balance: ${accountBalances[accountId]}");
+            }
+            else
+            {
+                Console.WriteLine($" Insufficient balance for Account {accountId}, withdrawal skipped.");
+            }
+        }
+    }
+
+    //  Get all accounts
+    public Dictionary<int, double> GetAccounts()
+    {
+        return new Dictionary<int, double>(accountBalances);
+    }
+
+    //  Get accounts sorted by balance
+    public List<KeyValuePair<int, double>> GetSortedAccounts()
+    {
+        List<KeyValuePair<int, double>> sortedList = new List<KeyValuePair<int, double>>();
+        foreach (var entry in sortedBalances)
+        {
+            foreach (var accountId in entry.Value)
+            {
+                sortedList.Add(new KeyValuePair<int, double>(accountId, entry.Key));
+            }
+        }
+        return sortedList;
+    }
+
+    //  Update SortedDictionary after balance change
+    private void UpdateSortedBalances(int accountId, double oldBalance, double newBalance)
+    {
+        sortedBalances[oldBalance].Remove(accountId);
+        if (sortedBalances[oldBalance].Count == 0)
+        {
+            sortedBalances.Remove(oldBalance);
+        }
+
+        if (!sortedBalances.ContainsKey(newBalance))
+        {
+            sortedBalances[newBalance] = new List<int>();
+        }
+        sortedBalances[newBalance].Add(accountId);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        BankingSystem bank = new BankingSystem();
+
+        //  Creating accounts
+        bank.CreateAccount(101, 5000);
+        bank.CreateAccount(102, 3000);
+        bank.CreateAccount(103, 7000);
+        bank.CreateAccount(104, 2000);
+
+        //  Depositing money
+        bank.Deposit(101, 1500);
+        bank.Deposit(102, 500);
+        
+        //  Withdrawal requests
+        bank.RequestWithdrawal(101, 2000);
+        bank.RequestWithdrawal(103, 500);
+        bank.RequestWithdrawal(104, 3000); // Should fail due to low balance
+
+        //  Processing withdrawals
+        Console.WriteLine("\n Processing Withdrawals:");
+        bank.ProcessWithdrawals();
+
+        //  Display all accounts
+        Console.WriteLine("\n All Accounts:");
+        foreach (var account in bank.GetAccounts())
+            Console.WriteLine($"Account {account.Key}: ${account.Value}");
+
+        //  Display sorted accounts by balance
+        Console.WriteLine("\n Accounts Sorted by Balance:");
+        foreach (var account in bank.GetSortedAccounts())
+            Console.WriteLine($"Account {account.Key}: ${account.Value}");
+    }
+}

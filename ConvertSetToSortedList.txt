@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Define a HashSet
+        HashSet<int> set = new HashSet<int> { 5, 3, 9, 1 };
+
+        // Convert to Sorted List
+        List<int> sortedList = ConvertToSortedList(set);
+
+        // Print result
+        Console.WriteLine("Sorted List: " + string.Join(", ", sortedList));
+    }
+
+    static List<int> ConvertToSortedList(HashSet<int> set)
+    {
+        List<int> list = new List<int>(set); // Convert HashSet to List
+        list.Sort(); // Sort the List in ascending order
+        return list;
+    }
+}

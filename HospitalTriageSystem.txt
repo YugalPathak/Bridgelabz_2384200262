@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Define a priority queue for patients (higher severity = higher priority)
+        PriorityQueue<string, int> triageQueue = new PriorityQueue<string, int>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
+
+        // Enqueue patients with (Name, Severity)
+        triageQueue.Enqueue("John", 3);
+        triageQueue.Enqueue("Alice", 5);
+        triageQueue.Enqueue("Bob", 2);
+
+        // Process patients in order of severity
+        Console.WriteLine("Patients treated in order:");
+        while (triageQueue.Count > 0)
+        {
+            Console.WriteLine(triageQueue.Dequeue());
+        }
+    }
+}

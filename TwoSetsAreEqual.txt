@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Define two sets
+        HashSet<int> set1 = new HashSet<int> { 1, 2, 3 };
+        HashSet<int> set2 = new HashSet<int> { 3, 2, 1 };
+
+        // Check if sets are equal
+        bool isEqual = AreSetsEqual(set1, set2);
+
+        // Print result
+        Console.WriteLine("Are sets equal? " + isEqual);
+    }
+
+    static bool AreSetsEqual(HashSet<int> set1, HashSet<int> set2)
+    {
+        return set1.SetEquals(set2); // Built-in method to compare sets
+    }
+}

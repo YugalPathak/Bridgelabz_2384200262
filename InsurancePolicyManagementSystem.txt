@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+
+class Policy : IComparable<Policy>
+{
+    public string PolicyNumber { get; set; }
+    public string HolderName { get; set; }
+    public string CoverageType { get; set; }
+    public DateTime ExpiryDate { get; set; }
+
+    // HashSet override Equals & GetHashCode
+    public override bool Equals(object obj)
+    {
+        return obj is Policy policy && PolicyNumber == policy.PolicyNumber;
+    }
+
+    public override int GetHashCode()
+    {
+        return PolicyNumber.GetHashCode();
+    }
+
+    public int CompareTo(Policy other)
+    {
+        return ExpiryDate.CompareTo(other.ExpiryDate);
+    }
+}
+
+class InsurancePolicyManager
+{
+    private HashSet<Policy> policySet = new HashSet<Policy>();
+    private LinkedList<Policy> orderedPolicies = new LinkedList<Policy>();
+    private SortedSet<Policy> sortedByExpiry = new SortedSet<Policy>();
+
+    public void AddPolicy(Policy policy)
+    {
+        if (policySet.Add(policy)) // Unique policy add 
+        {
+            orderedPolicies.AddLast(policy); // Order maintain
+            sortedByExpiry.Add(policy); // Sorted expiry 
+        }
+    }
+
+    public List<Policy> GetAllPolicies()
+    {
+        return new List<Policy>(policySet);
+    }
+
+    public List<Policy> GetExpiringSoon(int days)
+    {
+        DateTime threshold = DateTime.Now.AddDays(days);
+        return new List<Policy>(sortedByExpiry.GetViewBetween(
+            new Policy { ExpiryDate = DateTime.MinValue },
+            new Policy { ExpiryDate = threshold }
+        ));
+    }
+
+    public List<Policy> GetPoliciesByCoverage(string coverageType)
+    {
+        List<Policy> result = new List<Policy>();
+        foreach (var policy in policySet)
+        {
+            if (policy.CoverageType.Equals(coverageType, StringComparison.OrdinalIgnoreCase))
+            {
+                result.Add(policy);
+            }
+        }
+        return result;
+    }
+
+    public List<Policy> GetDuplicatePolicies()
+    {
+        Dictionary<string, int> policyCount = new Dictionary<string, int>();
+        List<Policy> duplicates = new List<Policy>();
+
+        foreach (var policy in orderedPolicies)
+        {
+            if (policyCount.ContainsKey(policy.PolicyNumber))
+                duplicates.Add(policy);
+            else
+                policyCount[policy.PolicyNumber] = 1;
+        }
+        return duplicates;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        InsurancePolicyManager manager = new InsurancePolicyManager();
+
+        // Policies add 
+        manager.AddPolicy(new Policy { PolicyNumber = "P001", HolderName = "John", CoverageType = "Health", ExpiryDate = DateTime.Now.AddDays(20) });
+        manager.AddPolicy(new Policy { PolicyNumber = "P002", HolderName = "Alice", CoverageType = "Auto", ExpiryDate = DateTime.Now.AddDays(40) });
+        manager.AddPolicy(new Policy { PolicyNumber = "P003", HolderName = "Bob", CoverageType = "Health", ExpiryDate = DateTime.Now.AddDays(10) });
+        manager.AddPolicy(new Policy { PolicyNumber = "P001", HolderName = "John Duplicate", CoverageType = "Health", ExpiryDate = DateTime.Now.AddDays(20) });
+
+        Console.WriteLine("\n All Unique Policies:");
+        foreach (var policy in manager.GetAllPolicies())
+            Console.WriteLine($"{policy.PolicyNumber} - {policy.HolderName} ({policy.CoverageType})");
+
+        Console.WriteLine("\n Policies Expiring Soon:");
+        foreach (var policy in manager.GetExpiringSoon(30))
+            Console.WriteLine($"{policy.PolicyNumber} - {policy.HolderName} (Expiry: {policy.ExpiryDate.ToShortDateString()})");
+
+        Console.WriteLine("\n Health Insurance Policies:");
+        foreach (var policy in manager.GetPoliciesByCoverage("Health"))
+            Console.WriteLine($"{policy.PolicyNumber} - {policy.HolderName}");
+
+        Console.WriteLine("\n Duplicate Policies:");
+        foreach (var policy in manager.GetDuplicatePolicies())
+            Console.WriteLine($"{policy.PolicyNumber} - {policy.HolderName}");
+    }
+}

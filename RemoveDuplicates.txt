@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Input list
+        List<int> numbers = new List<int> { 3, 1, 2, 2, 3, 4 };
+
+        // Remove duplicates while maintaining order
+        List<int> uniqueList = RemoveDuplicates(numbers);
+
+        // Print the result
+        Console.WriteLine("Unique List: " + string.Join(", ", uniqueList));
+    }
+
+    static List<int> RemoveDuplicates(List<int> list)
+    {
+        List<int> result = new List<int>(); // List to store unique elements
+
+        foreach (int num in list)
+        {
+            if (!result.Contains(num)) // Check if element is already added
+            {
+                result.Add(num); // Add only if not already in result
+            }
+        }
+
+        return result;
+    }
+}

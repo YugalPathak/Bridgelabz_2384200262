@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class ShoppingCart
+{
+    private Dictionary<string, double> productPrices = new Dictionary<string, double>(); // Product prices
+    private LinkedList<KeyValuePair<string, double>> cartOrder = new LinkedList<KeyValuePair<string, double>>(); // Order maintained
+    private SortedDictionary<double, List<string>> sortedCart = new SortedDictionary<double, List<string>>(); // Sorted by price
+
+    //  Add product to cart
+    public void AddProduct(string product, double price)
+    {
+        if (!productPrices.ContainsKey(product))
+        {
+            productPrices[product] = price;
+            cartOrder.AddLast(new KeyValuePair<string, double>(product, price));
+
+            if (!sortedCart.ContainsKey(price))
+                sortedCart[price] = new List<string>();
+            sortedCart[price].Add(product);
+        }
+    }
+
+    //  Get all products
+    public Dictionary<string, double> GetProducts()
+    {
+        return new Dictionary<string, double>(productPrices);
+    }
+
+    //  Get products sorted by price
+    public List<KeyValuePair<string, double>> GetSortedProducts()
+    {
+        List<KeyValuePair<string, double>> sortedList = new List<KeyValuePair<string, double>>();
+        foreach (var entry in sortedCart)
+        {
+            foreach (var product in entry.Value)
+            {
+                sortedList.Add(new KeyValuePair<string, double>(product, entry.Key));
+            }
+        }
+        return sortedList;
+    }
+
+    //  Get cart in insertion order
+    public List<KeyValuePair<string, double>> GetCartOrder()
+    {
+        return cartOrder.ToList();
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        ShoppingCart cart = new ShoppingCart();
+
+        //  Adding products to cart
+        cart.AddProduct("Laptop", 1200.99);
+        cart.AddProduct("Headphones", 99.99);
+        cart.AddProduct("Mouse", 25.50);
+        cart.AddProduct("Keyboard", 45.75);
+        cart.AddProduct("Monitor", 199.99);
+
+        //  Display all products
+        Console.WriteLine("\n All Products:");
+        foreach (var product in cart.GetProducts())
+            Console.WriteLine($"{product.Key}: ${product.Value}");
+
+        //  Display sorted products by price
+        Console.WriteLine("\n Products Sorted by Price:");
+        foreach (var product in cart.GetSortedProducts())
+            Console.WriteLine($"{product.Key}: ${product.Value}");
+
+        // Display cart in insertion order
+        Console.WriteLine("\n Cart Order (Insertion Order):");
+        foreach (var product in cart.GetCartOrder())
+            Console.WriteLine($"{product.Key}: ${product.Value}");
+    }
+}

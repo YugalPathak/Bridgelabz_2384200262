@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Input dictionary
+        Dictionary<string, int> inputMap = new Dictionary<string, int>
+        {
+            { "A", 1 },
+            { "B", 2 },
+            { "C", 1 }
+        };
+
+        // Invert the map
+        Dictionary<int, List<string>> invertedMap = InvertDictionary(inputMap);
+
+        // Print result
+        foreach (var kvp in invertedMap)
+        {
+            Console.WriteLine($"{kvp.Key} = [{string.Join(", ", kvp.Value)}]");
+        }
+    }
+
+    static Dictionary<V, List<K>> InvertDictionary<K, V>(Dictionary<K, V> dict)
+    {
+        Dictionary<V, List<K>> inverted = new Dictionary<V, List<K>>();
+
+        foreach (var kvp in dict)
+        {
+            if (!inverted.ContainsKey(kvp.Value))
+                inverted[kvp.Value] = new List<K>();
+
+            inverted[kvp.Value].Add(kvp.Key);
+        }
+
+        return inverted;
+    }
+}

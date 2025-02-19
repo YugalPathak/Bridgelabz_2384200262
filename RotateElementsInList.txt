@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Input list
+        List<int> numbers = new List<int> { 10, 20, 30, 40, 50 };
+        int rotateBy = 2;
+
+        // Rotate the list
+        List<int> rotatedList = RotateList(numbers, rotateBy);
+
+        // Print the rotated list
+        Console.WriteLine("Rotated List: " + string.Join(", ", rotatedList));
+    }
+
+    static List<int> RotateList(List<int> list, int positions)
+    {
+        int n = list.Count;
+        if (n == 0 || positions % n == 0) 
+            return new List<int>(list); // No change if positions is multiple of list size
+
+        positions = positions % n; // Handle cases where positions > list size
+
+        // Create new list with rotated elements
+        List<int> rotated = new List<int>();
+
+        // Add elements from 'positions' index to end
+        rotated.AddRange(list.GetRange(positions, n - positions));
+
+        // Add first 'positions' elements to the end
+        rotated.AddRange(list.GetRange(0, positions));
+
+        return rotated;
+    }
+}
