@@ -116,3 +116,10 @@
 3. Lambda expression
 4. Practice Problems on Generic Class 
 ---------------------------------------------------------------------------------------------------------------------
+19-02-2025
+
+1. Collection Framework
+2. Generic and non generic types
+3. In-Built Methods of Data Structures
+4. Practice Problems using Collection Framework
+---------------------------------------------------------------------------------------------------------------------
