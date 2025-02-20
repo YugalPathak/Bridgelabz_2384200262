@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+class WordCountProgram
+{
+    static void Main()
+    {
+        string filePath = "sample.txt"; // Path to the text file
+
+        try
+        {
+            Dictionary<string, int> wordCounts = CountWords(filePath);
+            int totalWords = wordCounts.Values.Sum();
+
+            Console.WriteLine($"Total Words: {totalWords}");
+            Console.WriteLine("\nTop 5 Most Frequent Words:");
+
+            foreach (var word in wordCounts.OrderByDescending(kv => kv.Value).Take(5))
+            {
+                Console.WriteLine($"{word.Key}: {word.Value} times");
+            }
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine("IO Exception: " + ex.Message);
+        }
+    }
+
+    static Dictionary<string, int> CountWords(string filePath)
+    {
+        Dictionary<string, int> wordCounts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+        using (StreamReader reader = new StreamReader(filePath))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                string[] words = Regex.Split(line.ToLower(), @"\W+"); // Split by non-word characters
+
+                foreach (string word in words)
+                {
+                    if (!string.IsNullOrWhiteSpace(word))
+                    {
+                        if (wordCounts.ContainsKey(word))
+                            wordCounts[word]++;
+                        else
+                            wordCounts[word] = 1;
+                    }
+                }
+            }
+        }
+
+        return wordCounts;
+    }
+}

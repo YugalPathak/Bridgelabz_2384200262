@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FileHandling
+{
+    internal class Program1
+    {
+        static void Main(string[] args)
+        { 
+             string filePath = "C:\\Users\\khant\\OneDrive\\Desktop\\input.txt"; // File to save user data
+
+              try
+              {
+                  // Use StreamReader to read user input from the console
+                  using (StreamReader reader = new StreamReader(Console.OpenStandardInput()))
+                  {
+                      Console.WriteLine("Enter your name: ");
+          string name = reader.ReadLine(); // Read input using StreamReader
+
+          Console.WriteLine("Enter your age: ");
+          string ageInput =reader.ReadLine();
+
+          Console.WriteLine("Enter your favorite programming language: ");
+          string language = reader.ReadLine();
+
+          // Validate age input
+          if (!int.TryParse(ageInput, out int age) || age <= 0)
+          {
+                Console.WriteLine("Error: Invalid age entered.");
+                return;
+          }
+
+          // Write user data to file using StreamWriter
+          using (StreamWriter writer = new StreamWriter(filePath))
+          {
+                writer.WriteLine($"Name: {name}");
+                writer.WriteLine($"Age: {age}");
+                writer.WriteLine($"Favorite Language: {language}");
+          }
+
+          Console.WriteLine(" User data has been saved successfully!");
+          }
+      }
+      catch (UnauthorizedAccessException)
+       {
+           Console.WriteLine("Error: Access denied. Check file permissions.");
+       }
+       catch (IOException ex)
+       {
+            Console.WriteLine($"File I/O Error: {ex.Message}");
+       }
+       catch (Exception ex)
+       {
+             Console.WriteLine($"Unexpected error: {ex.Message}");
+       }
+     }
+  }
+}

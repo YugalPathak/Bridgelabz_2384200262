@@ -1,0 +1,61 @@
+using System;
+using System.IO;
+
+class StudentDataStream
+{
+    static void Main()
+    {
+        string filePath = "students.dat";  // Binary file to store data
+
+        try
+        {
+            // Store student details in the binary file
+            WriteStudentData(filePath);
+
+            // Retrieve and display student details
+            ReadStudentData(filePath);
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine("IO Exception: " + ex.Message);
+        }
+    }
+
+    // Write student data to a binary file
+    static void WriteStudentData(string filePath)
+    {
+        using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+        using (BinaryWriter writer = new BinaryWriter(fs))
+        {
+            // Sample student data
+            writer.Write(101);             // Roll Number (int)
+            writer.Write("Alice Johnson"); // Name (string)
+            writer.Write(3.75f);           // GPA (float)
+
+            writer.Write(102);
+            writer.Write("Bob Smith");
+            writer.Write(3.92f);
+
+            Console.WriteLine("Student data has been successfully written to the file.");
+        }
+    }
+
+    // Read student data from the binary file
+    static void ReadStudentData(string filePath)
+    {
+        using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+        using (BinaryReader reader = new BinaryReader(fs))
+        {
+            Console.WriteLine("\nRetrieving Student Data:");
+
+            while (fs.Position < fs.Length)
+            {
+                int rollNumber = reader.ReadInt32(); // Read int
+                string name = reader.ReadString();   // Read string
+                float gpa = reader.ReadSingle();     // Read float
+
+                Console.WriteLine($"Roll No: {rollNumber}, Name: {name}, GPA: {gpa}");
+            }
+        }
+    }
+}

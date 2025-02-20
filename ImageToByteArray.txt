@@ -1,0 +1,64 @@
+using System;
+using System.IO;
+
+class ByteArrayStreamExample
+{
+    static void Main()
+    {
+        string inputFile = "input.jpg";    // Original image file
+        string outputFile = "output.jpg";  // New image file to be created
+
+        try
+        {
+            // Convert image to byte array
+            byte[] imageBytes = FileToByteArray(inputFile);
+
+            // Write byte array back to an image file
+            ByteArrayToFile(outputFile, imageBytes);
+
+            // Verify if the files are identical
+            if (CompareFiles(inputFile, outputFile))
+            {
+                Console.WriteLine("Success: The files are identical!");
+            }
+            else
+            {
+                Console.WriteLine("Error: The files do not match.");
+            }
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine("IO Exception: " + ex.Message);
+        }
+    }
+
+    // Convert an image file to a byte array
+    static byte[] FileToByteArray(string filePath)
+    {
+        using (MemoryStream ms = new MemoryStream())
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                fs.CopyTo(ms);
+            }
+            return ms.ToArray();
+        }
+    }
+
+    // Write a byte array back to an image file
+    static void ByteArrayToFile(string filePath, byte[] byteArray)
+    {
+        using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+        {
+            fs.Write(byteArray, 0, byteArray.Length);
+        }
+    }
+
+    // Compare two files to check if they are identical
+    static bool CompareFiles(string file1, string file2)
+    {
+        byte[] file1Bytes = File.ReadAllBytes(file1);
+        byte[] file2Bytes = File.ReadAllBytes(file2);
+        return StructuralComparisons.StructuralEqualityComparer.Equals(file1Bytes, file2Bytes);
+    }
+}
