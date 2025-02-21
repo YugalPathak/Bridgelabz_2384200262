@@ -129,3 +129,10 @@
 2. Constructors of abstract class
 3. Practice Problems on Streams
 ---------------------------------------------------------------------------------------------------------------------
+21-02-2025
+
+1. Exception Handlig - Try and Catch and Finally Blocks
+2. Throw Exception and Custom Exception
+3. Exception Propagation
+4. Practice Problems on Exception Handling
+---------------------------------------------------------------------------------------------------------------------
