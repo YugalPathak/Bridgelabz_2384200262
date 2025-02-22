@@ -1,0 +1,33 @@
+using System;
+using System.Text.RegularExpressions;
+
+namespace RegularExpression
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Define a regex pattern for validating usernames
+            string pattern = @"^[a-zA-Z][a-zA-Z0-9_]{4,14}$"; 
+
+            // List of sample usernames to check
+            string[] usernames = { "user_123", "123user", "us", "Valid_User1", "hello_world_2023", "User99" };
+
+            // Iterate through each username in the list
+            foreach (string username in usernames)
+            {
+                // Check if the username matches the pattern
+                if (Regex.IsMatch(username, pattern))
+                {
+                    // Print valid usernames
+                    Console.WriteLine($" \"{username}\" → Valid");
+                }
+                else
+                {
+                    // Print invalid usernames
+                    Console.WriteLine($" \"{username}\" → Invalid");
+                }
+            }
+        }
+    }
+}

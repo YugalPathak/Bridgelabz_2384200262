@@ -1,0 +1,55 @@
+using System;
+using NUnit.Framework;
+
+// Simulating a database connection class
+public class DatabaseConnection
+{
+    public bool IsConnected { get; private set; }
+
+    // Method to establish a connection
+    public void Connect()
+    {
+        IsConnected = true;
+        Console.WriteLine("Database Connected.");
+    }
+
+    // Method to close the connection
+    public void Disconnect()
+    {
+        IsConnected = false;
+        Console.WriteLine("Database Disconnected.");
+    }
+}
+
+// NUnit test class
+[TestFixture]
+public class DatabaseConnectionTests
+{
+    private DatabaseConnection _db;
+
+    [SetUp] // Runs before each test
+    public void Setup()
+    {
+        _db = new DatabaseConnection();
+        _db.Connect();
+    }
+
+    [TearDown] // Runs after each test
+    public void Teardown()
+    {
+        _db.Disconnect();
+    }
+
+    [Test] // Test to verify connection is established
+    public void Connect_Should_Set_IsConnected_To_True()
+    {
+        Assert.IsTrue(_db.IsConnected);
+    }
+
+    [Test] // Test to verify connection is closed
+    public void Disconnect_Should_Set_IsConnected_To_False()
+    {
+        _db.Disconnect(); // Manually disconnect
+        Assert.IsFalse(_db.IsConnected);
+    }
+}

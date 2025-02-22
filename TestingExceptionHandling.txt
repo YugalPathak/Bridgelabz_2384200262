@@ -1,0 +1,25 @@
+using System;
+using Nunit.Framework;
+
+public class Calculator
+{
+    // Method to divide two numbers, throws exception if denominator is zero
+    public int Divide(int a, int b)
+    {
+        if (b == 0)
+            throw new ArithmeticException("Division by zero is not allowed.");
+        
+        return a / b;
+    }
+}
+
+public class CalculatorTests
+{
+    [Test] // Test to verify exception is thrown when dividing by zero
+    public void Divide_ByZero_ThrowsArithmeticException()
+    {
+        var calculator = new Calculator(); // Arrange
+
+        // Act & Assert: Check if exception is thrown
+        Assert.Throws<ArithmeticException>(() => calculator.Divide(10, 0));
+    }}

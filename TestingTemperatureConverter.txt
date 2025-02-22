@@ -1,0 +1,45 @@
+using System;
+using NUnit.Framework;
+
+public class TemperatureConverter
+{
+    // Converts Celsius to Fahrenheit
+    public double CelsiusToFahrenheit(double celsius)
+    {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    // Converts Fahrenheit to Celsius
+    public double FahrenheitToCelsius(double fahrenheit)
+    {
+        return (fahrenheit - 32) * 5 / 9;
+    }
+}
+
+[TestFixture]
+public class TemperatureConverterTests
+{
+    private TemperatureConverter _converter;
+
+    [SetUp] // Runs before each test
+    public void Setup()
+    {
+        _converter = new TemperatureConverter();
+    }
+
+    [Test] // Test Celsius to Fahrenheit conversion
+    public void CelsiusToFahrenheit_Should_Return_Correct_Value()
+    {
+        Assert.AreEqual(32, _converter.CelsiusToFahrenheit(0), 0.01);
+        Assert.AreEqual(212, _converter.CelsiusToFahrenheit(100), 0.01);
+        Assert.AreEqual(98.6, _converter.CelsiusToFahrenheit(37), 0.01);
+    }
+
+    [Test] // Test Fahrenheit to Celsius conversion
+    public void FahrenheitToCelsius_Should_Return_Correct_Value()
+    {
+        Assert.AreEqual(0, _converter.FahrenheitToCelsius(32), 0.01);
+        Assert.AreEqual(100, _converter.FahrenheitToCelsius(212), 0.01);
+        Assert.AreEqual(37, _converter.FahrenheitToCelsius(98.6), 0.01);
+    }
+}

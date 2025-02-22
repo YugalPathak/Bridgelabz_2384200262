@@ -1,0 +1,25 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define a regex pattern to match URLs (http or https)
+        string pattern = @"\bhttps?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(/\S*)?\b"; 
+
+        // Sample input text containing URLs
+        string input = "Visit https://www.google.com and http://example.org for more info.";
+
+        // Find all matches of URLs in the input text
+        MatchCollection matches = Regex.Matches(input, pattern);
+
+        // Print extracted URLs
+        Console.WriteLine("Extracted Links:");
+        foreach (Match match in matches)
+        {
+            // Print each matched URL
+            Console.WriteLine(match.Value);
+        }
+    }
+}

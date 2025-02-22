@@ -1,0 +1,27 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define the input string with multiple spaces
+        string input = "This    is  an    example   with   multiple   spaces.";
+
+        // Define a regex pattern to match one or more spaces
+        string pattern = @"\s+";
+
+        // Define the replacement string (a single space)
+        string replacement = " ";
+
+        // Replace multiple spaces with a single space using Regex
+        string result = Regex.Replace(input, pattern, replacement);
+
+        // Print the original string with multiple spaces
+        Console.WriteLine("Original String: " + input);
+
+        // Print the processed string with extra spaces removed
+        Console.WriteLine("Processed String: " + result);
+    }
+}
+

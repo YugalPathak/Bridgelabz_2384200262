@@ -1,0 +1,26 @@
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define the input sentence containing repeating words
+        string input = "This is is a repeated repeated word test.";
+
+        // Define a regex pattern to match consecutive repeating words
+        string pattern = @"\b(\w+)\s+\1\b";
+
+        // Find all matches of repeating words (case-insensitive)
+        MatchCollection matches = Regex.Matches(input, pattern, RegexOptions.IgnoreCase);
+
+        // Print the repeating words
+        Console.WriteLine("Repeating Words:");
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Groups[1].Value); // Extract only the repeating word
+        }
+    }
+}
+

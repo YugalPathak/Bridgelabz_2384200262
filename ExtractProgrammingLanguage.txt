@@ -1,0 +1,24 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define the input sentence containing programming languages
+        string input = "I love Java, Python, and JavaScript, but I haven't tried Go yet.";
+
+        // Define a regex pattern to match common programming languages
+        string pattern = @"\b(JavaScript|Java|Python|C\+\+|C#|Ruby|Go|Swift|Kotlin|PHP|TypeScript|Rust|Perl|Scala|R|Dart)\b";
+
+        // Find all matches of programming languages in the input text
+        MatchCollection matches = Regex.Matches(input, pattern);
+
+        // Print the extracted programming languages
+        Console.WriteLine("Extracted Programming Languages:");
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}

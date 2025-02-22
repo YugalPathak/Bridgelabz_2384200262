@@ -1,0 +1,96 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework; // Importing NUnit framework for unit testing
+
+namespace UnitTesting
+{
+    // Calculator class that provides basic arithmetic operations
+    public class Calculator
+    {
+        // Method to add two numbers
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        // Method to subtract second number from the first
+        public int Subtract(int a, int b)
+        {
+            return a - b;
+        }
+
+        // Method to multiply two numbers
+        public int Multiply(int a, int b)
+        {
+            return a * b;
+        }
+
+        // Method to divide first number by second number
+        public int Divide(int a, int b)
+        {
+            if (b == 0)
+                throw new DivideByZeroException("Cannot divide by zero"); // Handling division by zero exception
+            return a / b;
+        }
+    }
+ 
+    // Test class for Calculator
+    [TestFixture]
+    public class Class1
+    {
+        private Calculator calculator; // Instance of Calculator class
+        
+        // Setup method to initialize Calculator object before each test
+        [SetUp]
+        public void Setup()
+        {
+            calculator = new Calculator();
+        }
+
+        // Test case for addition method
+        [Test]
+        public void AddTest()
+        {
+            int actualResult = calculator.Add(2, 3);
+            int expectedResult = 5;
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        // Test case for subtraction method
+        [Test]
+        public void SubtractTest()
+        {
+            int actualResult = calculator.Subtract(10, 3);
+            int expectedResult = 7;
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        // Test case for multiplication method
+        [Test]
+        public void MultiplyTest()
+        {
+            int actualResult = calculator.Multiply(10, 5);
+            int expectedResult = 50;
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        // Test case for division method
+        [Test]
+        public void DivideTest()
+        {
+            int actualResult = calculator.Divide(10, 5);
+            int expectedResult = 2;
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        // Test case to check division by zero exception
+        [Test]
+        public void Divide_ByZero_ShouldThrowException()
+        {
+            Assert.Throws<DivideByZeroException>(() => calculator.Divide(10, 0));
+        }
+    }
+}

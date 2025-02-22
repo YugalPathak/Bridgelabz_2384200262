@@ -1,0 +1,30 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define a regex pattern for validating license plate numbers
+        string pattern = @"^[A-Z]{2}\d{4}$"; 
+
+        // List of sample license plates to check
+        string[] licensePlates = { "AB1234", "A12345", "XY9876", "Z1234", "ZZ999", "AB12C4", "CD5678" };
+
+        // Iterate through each license plate in the list
+        foreach (string plate in licensePlates)
+        {
+            // Check if the license plate matches the pattern
+            if (Regex.IsMatch(plate, pattern))
+            {
+                // Print valid license plates
+                Console.WriteLine($"\"{plate}\" = Valid");
+            }
+            else
+            {
+                // Print invalid license plates
+                Console.WriteLine($"\"{plate}\" = Invalid");
+            }
+        }
+    }
+}

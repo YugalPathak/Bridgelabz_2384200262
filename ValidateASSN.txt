@@ -1,0 +1,20 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define an array of test Social Security Numbers (SSNs)
+        string[] testSSNs = { "123-45-6789", "123456789", "987-65-4321", "12-345-6789" };
+
+        // Define a regex pattern to validate SSNs in the format XXX-XX-XXXX
+        string pattern = @"^\d{3}-\d{2}-\d{4}$";
+
+        // Loop through each SSN and check if it matches the pattern
+        foreach (string ssn in testSSNs)
+        {
+            Console.WriteLine($"{ssn} → {(Regex.IsMatch(ssn, pattern) ? "Valid SSN" : "Invalid SSN")}");
+        }
+    }
+}

@@ -1,0 +1,27 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define the input sentence containing bad words
+        string input = "This is a damn bad example with some stupid words.";
+
+        // List of bad words to be censored
+        string[] badWords = { "damn", "stupid" }; // Add more words as needed
+
+        // Build a regex pattern dynamically from the bad words list
+        string pattern = @"\b(" + string.Join("|", badWords) + @")\b";
+
+        // Replace bad words with "****" (case insensitive)
+        string censoredSentence = Regex.Replace(input, pattern, "****", RegexOptions.IgnoreCase);
+
+        // Print the original sentence
+        Console.WriteLine("Original Sentence: " + input);
+
+        // Print the censored sentence with bad words replaced
+        Console.WriteLine("Censored Sentence: " + censoredSentence);
+    }
+}
+

@@ -1,0 +1,23 @@
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define a regex pattern to match Visa (4xxxxxxxxxxxxxxx) and MasterCard (5xxxxxxxxxxxxxxx) with 16 digits
+        string pattern = @"^(4\d{15}|5\d{15})$";
+
+        // List of test credit card numbers
+        string[] cardNumbers = { "4111111111111111", "5111111111111111", "6111111111111111", "4222222222222", "5000111122223333" };
+
+        // Loop through each credit card number and validate it
+        foreach (string card in cardNumbers)
+        {
+            // Print whether the credit card number is valid or invalid
+            Console.WriteLine($"{card} → {(Regex.IsMatch(card, pattern) ? "Valid" : "Invalid")}");
+        }
+    }
+}
+

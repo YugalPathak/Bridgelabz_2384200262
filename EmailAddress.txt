@@ -1,0 +1,27 @@
+
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define a regex pattern for extracting email addresses
+        string pattern = @"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}";
+
+        // Sample input text containing email addresses
+        string input = "Contact us at support@example.com and info@company.org for more details.";
+
+        // Find all matches of email addresses in the input text
+        MatchCollection matches = Regex.Matches(input, pattern);
+
+        // Print extracted email addresses
+        Console.WriteLine("Extracted Email Addresses:");
+        foreach (Match match in matches)
+        {
+            // Print each matched email address
+            Console.WriteLine(match.Value);
+        }
+    }
+}
+

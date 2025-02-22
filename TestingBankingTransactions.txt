@@ -1,0 +1,83 @@
+using System;
+using NUnit.Framework;
+
+public class BankAccount
+{
+    private double _balance;
+
+    public BankAccount(double initialBalance = 0)
+    {
+        _balance = initialBalance;
+    }
+
+    // Deposits money into the account
+    public void Deposit(double amount)
+    {
+        if (amount <= 0)
+            throw new ArgumentException("Deposit amount must be positive.");
+        
+        _balance += amount;
+    }
+
+    // Withdraws money from the account
+    public void Withdraw(double amount)
+    {
+        if (amount <= 0)
+            throw new ArgumentException("Withdrawal amount must be positive.");
+
+        if (amount > _balance)
+            throw new InvalidOperationException("Insufficient funds.");
+
+        _balance -= amount;
+    }
+
+    // Returns the current balance
+    public double GetBalance()
+    {
+        return _balance;
+    }
+}
+
+[TestFixture]
+public class BankAccountTests
+{
+    private BankAccount _account;
+
+    [SetUp] // Runs before each test
+    public void Setup()
+    {
+        _account = new BankAccount(100); // Initial balance of 100
+    }
+
+    [Test] // Test deposit functionality
+    public void Deposit_Should_Increase_Balance()
+    {
+        _account.Deposit(50);
+        Assert.AreEqual(150, _account.GetBalance());
+    }
+
+    [Test] // Test withdrawal functionality
+    public void Withdraw_Should_Decrease_Balance()
+    {
+        _account.Withdraw(40);
+        Assert.AreEqual(60, _account.GetBalance());
+    }
+
+    [Test] // Ensure withdrawal fails if funds are insufficient
+    public void Withdraw_Should_ThrowException_When_Insufficient_Funds()
+    {
+        Assert.Throws<InvalidOperationException>(() => _account.Withdraw(200));
+    }
+
+    [Test] // Ensure deposit of negative amount throws an exception
+    public void Deposit_Should_ThrowException_When_Amount_Is_Negative()
+    {
+        Assert.Throws<ArgumentException>(() => _account.Deposit(-10));
+    }
+
+    [Test] // Ensure withdrawal of negative amount throws an exception
+    public void Withdraw_Should_ThrowException_When_Amount_Is_Negative()
+    {
+        Assert.Throws<ArgumentException>(() => _account.Withdraw(-10));
+    }
+}

@@ -1,0 +1,25 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define the input text containing currency values
+        string input = "The price is $45.99, and the discount is $ 10.50.";
+
+        // Define a regex pattern to match currency values (with or without a space after $)
+        string pattern = @"\$\s?\d+(\.\d{2})?";
+
+        // Find all matches of currency values in the input text
+        MatchCollection matches = Regex.Matches(input, pattern);
+
+        // Print the extracted currency values
+        Console.WriteLine("Extracted Currency Values:");
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}
+

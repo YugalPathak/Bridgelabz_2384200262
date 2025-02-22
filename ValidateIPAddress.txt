@@ -1,0 +1,21 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define a regex pattern to match a valid IPv4 address
+        string pattern = @"\b((25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)\b";
+
+        // List of test IP addresses to validate
+        string[] testIPs = { "192.168.1.1", "255.255.255.255", "300.168.1.1", "123.45.678.90" };
+
+        // Loop through each IP address and check if it matches the pattern
+        foreach (string ip in testIPs)
+        {
+            // Print whether the IP address is valid or invalid
+            Console.WriteLine($"{ip} → {(Regex.IsMatch(ip, pattern) ? "Valid" : "Invalid")}");
+        }
+    }
+}

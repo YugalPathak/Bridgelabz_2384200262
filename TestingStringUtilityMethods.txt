@@ -1,0 +1,78 @@
+using System;
+using NUnit.Framework; // Importing NUnit framework for unit testing
+
+namespace UnitTesting
+{
+    // StringUtils class that provides basic string operations
+    public class StringUtils
+    {
+        // Method to reverse a string
+        public string Reverse(string str)
+        {
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+        // Method to check if a string is a palindrome
+        public bool IsPalindrome(string str)
+        {
+            string reversed = Reverse(str);
+            return string.Equals(str, reversed, StringComparison.OrdinalIgnoreCase);
+        }
+
+        // Method to convert a string to uppercase
+        public string ToUpperCase(string str)
+        {
+            return str.ToUpper();
+        }
+    }
+
+    // Test class for StringUtils
+    [TestFixture]
+    public class StringUtilsTests
+    {
+        private StringUtils stringUtils; // Instance of StringUtils class
+
+        // Setup method to initialize StringUtils object before each test
+        [SetUp]
+        public void Setup()
+        {
+            stringUtils = new StringUtils();
+        }
+
+        // Test case for Reverse method
+        [Test]
+        public void ReverseTest()
+        {
+            string actualResult = stringUtils.Reverse("hello");
+            string expectedResult = "olleh";
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        // Test case for IsPalindrome method (should return true for a palindrome)
+        [Test]
+        public void IsPalindromeTest_True()
+        {
+            bool actualResult = stringUtils.IsPalindrome("madam");
+            Assert.IsTrue(actualResult);
+        }
+
+        // Test case for IsPalindrome method (should return false for a non-palindrome)
+        [Test]
+        public void IsPalindromeTest_False()
+        {
+            bool actualResult = stringUtils.IsPalindrome("hello");
+            Assert.IsFalse(actualResult);
+        }
+
+        // Test case for ToUpperCase method
+        [Test]
+        public void ToUpperCaseTest()
+        {
+            string actualResult = stringUtils.ToUpperCase("hello");
+            string expectedResult = "HELLO";
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+    }
+}

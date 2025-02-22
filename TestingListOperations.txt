@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using NUnit.Framework; // Importing NUnit framework for unit testing
+
+namespace UnitTesting
+{
+    // ListManager class that provides basic list operations
+    public class ListManager
+    {
+        // Method to add an element to a list
+        public void AddElement(List<int> list, int element)
+        {
+            list.Add(element);
+        }
+
+        // Method to remove an element from a list
+        public bool RemoveElement(List<int> list, int element)
+        {
+            return list.Remove(element);
+        }
+
+        // Method to get the size of the list
+        public int GetSize(List<int> list)
+        {
+            return list.Count;
+        }
+    }
+
+    // Test class for ListManager
+    [TestFixture]
+    public class ListManagerTests
+    {
+        private ListManager listManager; // Instance of ListManager class
+        private List<int> testList; // Test list instance
+
+        // Setup method to initialize ListManager object and test list before each test
+        [SetUp]
+        public void Setup()
+        {
+            listManager = new ListManager();
+            testList = new List<int>();
+        }
+
+        // Test case for AddElement method
+        [Test]
+        public void AddElementTest()
+        {
+            listManager.AddElement(testList, 5);
+            Assert.Contains(5, testList);
+        }
+
+        // Test case for RemoveElement method (should return true when an element is removed)
+        [Test]
+        public void RemoveElementTest()
+        {
+            testList.Add(10);
+            bool actualResult = listManager.RemoveElement(testList, 10);
+            Assert.IsTrue(actualResult);
+            Assert.IsFalse(testList.Contains(10));
+        }
+
+        // Test case for GetSize method
+        [Test]
+        public void GetSizeTest()
+        {
+            listManager.AddElement(testList, 1);
+            listManager.AddElement(testList, 2);
+            listManager.AddElement(testList, 3);
+            int actualSize = listManager.GetSize(testList);
+            int expectedSize = 3;
+            Assert.AreEqual(expectedSize, actualSize);
+        }
+    }
+}

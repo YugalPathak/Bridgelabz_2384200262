@@ -1,0 +1,53 @@
+using System;
+using NUnit.Framework;
+
+public class DateFormatter
+{
+    // Converts date from yyyy-MM-dd to dd-MM-yyyy
+    public string FormatDate(string inputDate)
+    {
+        if (string.IsNullOrWhiteSpace(inputDate))
+            throw new ArgumentException("Date cannot be null or empty.");
+
+        if (!DateTime.TryParseExact(inputDate, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out DateTime date))
+            throw new FormatException("Invalid date format.");
+
+        return date.ToString("dd-MM-yyyy");
+    }
+}
+
+[TestFixture]
+public class DateFormatterTests
+{
+    private DateFormatter _formatter;
+
+    [SetUp] // Runs before each test
+    public void Setup()
+    {
+        _formatter = new DateFormatter();
+    }
+
+    [Test] // Test valid date formatting
+    public void FormatDate_Should_Return_Correct_Format()
+    {
+        Assert.AreEqual("25-12-2023", _formatter.FormatDate("2023-12-25"));
+        Assert.AreEqual("01-01-2000", _formatter.FormatDate("2000-01-01"));
+        Assert.AreEqual("15-08-1947", _formatter.FormatDate("1947-08-15"));
+    }
+
+    [Test] // Test empty/null input handling
+    public void FormatDate_Should_ThrowException_For_Null_Or_Empty_Input()
+    {
+        Assert.Throws<ArgumentException>(() => _formatter.FormatDate(""));
+        Assert.Throws<ArgumentException>(() => _formatter.FormatDate(null));
+    }
+
+    [Test] // Test invalid date format handling
+    public void FormatDate_Should_ThrowException_For_Invalid_Format()
+    {
+        Assert.Throws<FormatException>(() => _formatter.FormatDate("12-25-2023"));
+        Assert.Throws<FormatException>(() => _formatter.FormatDate("2023/12/25"));
+        Assert.Throws<FormatException>(() => _formatter.FormatDate("25-12-2023"));
+        Assert.Throws<FormatException>(() => _formatter.FormatDate("abcd-ef-gh"));
+    }
+}

@@ -1,0 +1,30 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        // Define a regex pattern for validating hex color codes
+        string pattern = @"^#([A-Fa-f0-9]{6})$"; 
+
+        // List of sample hex color codes to check
+        string[] hexColors = { "#FFA500", "#ff4500", "#123", "#abcdef", "#123ABC", "#GGG999", "#00ff00", "123456" };
+
+        // Iterate through each hex color code in the list
+        foreach (string color in hexColors)
+        {
+            // Check if the hex color code matches the pattern
+            if (Regex.IsMatch(color, pattern))
+            {
+                // Print valid hex color codes
+                Console.WriteLine($"\"{color}\" = Valid");
+            }
+            else
+            {
+                // Print invalid hex color codes
+                Console.WriteLine($"\"{color}\" = Invalid");
+            }
+        }
+    }
+}
