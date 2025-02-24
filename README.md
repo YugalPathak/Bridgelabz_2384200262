@@ -149,3 +149,10 @@
 3. Instance Without New Keyword
 4. Practice Problems on Reflection
 ---------------------------------------------------------------------------------------------------------------------
+24-02-2025
+
+1. Attributes or Annotations
+2. Custom Attributes using Reflection
+3. Inbuilt Attributes
+4. Practice Problems on Attributes
+---------------------------------------------------------------------------------------------------------------------
