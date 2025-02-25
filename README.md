@@ -156,3 +156,10 @@
 3. Inbuilt Attributes
 4. Practice Problems on Attributes
 ---------------------------------------------------------------------------------------------------------------------
+25-02-2025
+
+1. Introduction To CSV
+2. CSV File Operations
+3. Coding Standards
+4. Practice Problems on CSV Operations
+---------------------------------------------------------------------------------------------------------------------
