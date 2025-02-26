@@ -163,3 +163,10 @@
 3. Coding Standards
 4. Practice Problems on CSV Operations
 ---------------------------------------------------------------------------------------------------------------------
+26-02-2025
+
+1. Introduction To JSON
+2. JSON File Operations
+3. Mind Mapping
+4. Practice Problems on JSON File Operations
+---------------------------------------------------------------------------------------------------------------------
