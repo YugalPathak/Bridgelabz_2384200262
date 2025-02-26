@@ -1,0 +1,21 @@
+using System;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Xml;
+
+class Program
+{
+    static void Main()
+    {
+        // Define file paths
+        string filePath = "C:\\Users\\khant\\OneDrive\\Desktop\\example.json";
+
+        // Convert JSON to XML
+        XmlDocument xmlDocument = JsonConvert.DeserializeXmlNode(filePath, "Root");
+
+        // Print XML output
+        Console.WriteLine("Converted XML:");
+        Console.WriteLine(xmlDocument.OuterXml);
+    }
+}

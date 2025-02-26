@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // File paths
+        string jsonInputPath = "ipl_data.json";
+        string csvInputPath = "ipl_data.csv";
+        string jsonOutputPath = "ipl_censored.json";
+        string csvOutputPath = "ipl_censored.csv";
+
+        // Process JSON file
+        if (File.Exists(jsonInputPath))
+        {
+            string jsonData = File.ReadAllText(jsonInputPath);
+            List<Match> matches = JsonConvert.DeserializeObject<List<Match>>(jsonData);
+
+            // Apply censorship rules
+            foreach (var match in matches)
+            {
+                match.ApplyCensorship();
+            }
+
+            // Save censored JSON
+            File.WriteAllText(jsonOutputPath, JsonConvert.SerializeObject(matches, Formatting.Indented));
+            Console.WriteLine("✅ Censored JSON file generated: " + jsonOutputPath);
+        }
+
+        // Process CSV file
+        if (File.Exists(csvInputPath))
+        {
+            string[] csvLines = File.ReadAllLines(csvInputPath);
+            string[] headers = csvLines[0].Split(',');
+
+            List<string> outputCsv = new List<string> { csvLines[0] }; // Keep headers
+
+            for (int i = 1; i < csvLines.Length; i++)
+            {
+                string[] values = csvLines[i].Split(',');
+
+                // Apply censorship rules
+                values[1] = CensorTeamName(values[1]); // team1
+                values[2] = CensorTeamName(values[2]); // team2
+                values[5] = CensorTeamName(values[5]); // winner
+                values[6] = "REDACTED"; // player_of_match
+
+                outputCsv.Add(string.Join(",", values));
+            }
+
+            // Save censored CSV
+            File.WriteAllLines(csvOutputPath, outputCsv);
+            Console.WriteLine("✅ Censored CSV file generated: " + csvOutputPath);
+        }
+    }
+
+    // Method to mask team names
+    static string CensorTeamName(string team)
+    {
+        string[] words = team.Split(' ');
+        if (words.Length > 1)
+            words[1] = "***"; // Mask second word
+        return string.Join(" ", words);
+    }
+}
+
+// Define the Match class
+class Match
+{
+    public int match_id { get; set; }
+    public string team1 { get; set; }
+    public string team2 { get; set; }
+    public Dictionary<string, int> score { get; set; }
+    public string winner { get; set; }
+    public string player_of_match { get; set; }
+
+    // Apply censorship rules to JSON data
+    public void ApplyCensorship()
+    {
+        team1 = Program.CensorTeamName(team1);
+        team2 = Program.CensorTeamName(team2);
+        winner = Program.CensorTeamName(winner);
+        player_of_match = "REDACTED";
+
+        // Censor team names inside score dictionary
+        Dictionary<string, int> newScore = new Dictionary<string, int>();
+        foreach (var entry in score)
+        {
+            newScore[Program.CensorTeamName(entry.Key)] = entry.Value;
+        }
+        score = newScore;
+    }
+}

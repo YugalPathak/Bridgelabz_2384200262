@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
+using System.Xml.Linq;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
+
+namespace JSONData
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string filePath = "C:\\Users\\khant\\OneDrive\\Desktop\\example.json";
+            string schemaPath = "C:\\Users\\khant\\OneDrive\\Desktop\\schema.json";
+
+            // Read text from schema file
+            string schemaText = File.ReadAllText(schemaPath);
+            
+            // Read text from user file
+            string jsonString = File.ReadAllText(filePath);
+
+            // Create schema object
+            JSchema schema = JSchema.Parse(schemaText);
+
+            // Create json object
+            JObject jsonData = JObject.Parse(jsonString);
+
+            // Validate json against schema
+            if (jsonData.IsValid(schema))
+                Console.WriteLine("JSON is valid!");
+            else
+                Console.WriteLine("Invalid JSON!");
+        }
+    }
+}

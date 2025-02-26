@@ -1,0 +1,33 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
+class Program
+{
+    static void Main()
+    {
+        string csvFilePath = "data.csv"; // Ensure the file exists
+        string[] lines = File.ReadAllLines(csvFilePath);
+
+        string[] headers = lines[0].Split(',');
+        List<Dictionary<string, string>> dataList = new List<Dictionary<string, string>>();
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] values = lines[i].Split(',');
+            var row = new Dictionary<string, string>();
+
+            for (int j = 0; j < headers.Length; j++)
+            {
+                row[headers[j]] = values[j];
+            }
+
+            dataList.Add(row);
+        }
+
+        string jsonOutput = JsonConvert.SerializeObject(dataList, Formatting.Indented);
+        Console.WriteLine(jsonOutput);
+        File.WriteAllText("output.json", jsonOutput); // Save to file
+    }
+}

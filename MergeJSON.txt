@@ -1,0 +1,29 @@
+using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // First JSON object
+        JObject json1 = JObject.FromObject(new
+        {
+            Name = "Vanshita",
+            Age = 22
+        });
+
+        // Second JSON object
+        JObject json2 = JObject.FromObject(new
+        {
+            Email = "Vanshita@gmail.com",
+            City = "Jhansi"
+        });
+
+        // Merge json2 into json1
+        json1.Merge(json2);
+
+        // Print merged JSON
+        Console.WriteLine(json1.ToString(Formatting.Indented));
+    }
+}

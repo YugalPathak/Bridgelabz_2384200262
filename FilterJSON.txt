@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // Define the JSON file path (ensure file exists)
+        string filePath = "users.json";
+
+        // Read JSON content from file
+        string jsonContent = File.ReadAllText(filePath);
+
+        // Parse JSON into JArray
+        JArray users = JArray.Parse(jsonContent);
+
+        // Filter users older than 25
+        var filteredUsers = users
+            .Where(user => (int)user["Age"] > 25)
+            .ToList();
+
+        // Print filtered users
+        Console.WriteLine("Users older than 25:");
+        foreach (var user in filteredUsers)
+        {
+            Console.WriteLine(user.ToString(Formatting.Indented));
+        }
+    }
+}

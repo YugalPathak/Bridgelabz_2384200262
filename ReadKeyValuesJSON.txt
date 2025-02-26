@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
+using System.Xml.Linq;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
+
+namespace JSONData
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Path of the json file
+            string filePath = "C:\\Users\\khant\\OneDrive\\Desktop\\example.json";
+
+            // Read all text in json file
+            string json = File.ReadAllText(filePath);
+            dynamic user = JsonConvert.DeserializeObject(json);
+
+            // Print all the key and values
+            Console.WriteLine("Name: " + user.name);
+            Console.WriteLine("Age: " + user.age);
+            Console.WriteLine("Email: " + user.email);
+
+        }
+    }
+}

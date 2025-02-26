@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+namespace JSONData
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           // Creating a car object
+           Car car = new Car
+           {
+               Make = "Tesla",
+               Model = "Model S",
+               Year = 2023
+           };
+
+            // Convert car object to json string
+            string json = JsonConvert.SerializeObject(car, Formatting.Indented);
+
+            // Print json output
+            Console.WriteLine(json);
+        }
+    }
+
+    class Car
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+    }
+}

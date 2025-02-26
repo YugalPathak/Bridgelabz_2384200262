@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
+
+class Program
+{
+    static void Main()
+    {
+        // Define JSON schema with an email format check
+        string schemaJson = @"
+        {
+            ""type"": ""object"",
+            ""properties"": {
+                ""Name"": { ""type"": ""string"" },
+                ""Email"": { ""type"": ""string"", ""format"": ""email"" }
+            },
+            ""required"": [""Name"", ""Email""]
+        }";
+
+        // Create JSchema object
+        JSchema schema = JSchema.Parse(schemaJson);
+
+        // Example JSON data (valid and invalid cases)
+        string validJson = @"{ ""Name"": ""Vanshita"", ""Email"": ""vanshita@gmail.com"" }";
+        string invalidJson = @"{ ""Name"": ""John"", ""Email"": ""invalid-email"" }";
+
+        // Validate JSON
+        ValidateJson(validJson, schema);  // Should be valid
+        ValidateJson(invalidJson, schema); // Should be invalid
+    }
+
+    static void ValidateJson(string json, JSchema schema)
+    {
+        JObject jsonObject = JObject.Parse(json);
+        if (jsonObject.IsValid(schema, out IList<string> errors))
+        {
+            Console.WriteLine(" Valid JSON: " + json);
+        }
+        else
+        {
+            Console.WriteLine(" Invalid JSON:");
+            foreach (var error in errors)
+            {
+                Console.WriteLine("- " + error);
+            }
+        }
+    }
+}

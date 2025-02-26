@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
+using System.Xml.Linq;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
+
+namespace JSONData
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Define file paths
+            string file1Path = "C:\\Users\\khant\\OneDrive\\Desktop\\example.json"; // Ensure this file exists
+            string file2Path = "C:\\Users\\khant\\OneDrive\\Desktop\\example1.json"; // Ensure this file exists
+
+            // Read JSON content from files
+            string json1 = File.ReadAllText(file1Path);
+            string json2 = File.ReadAllText(file2Path);
+
+            // Parse JSON into JObject
+            JObject jsonObject1 = JObject.Parse(json1);
+            JObject jsonObject2 = JObject.Parse(json2);
+
+            // Merge jsonObject2 into jsonObject1
+            jsonObject1.Merge(jsonObject2);
+
+            // Print merged JSON
+            Console.WriteLine("Merged JSON:");
+            Console.WriteLine(jsonObject1.ToString());
+        }
+    }
+}
