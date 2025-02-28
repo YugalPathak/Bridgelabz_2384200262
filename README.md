@@ -170,3 +170,12 @@
 3. Mind Mapping
 4. Practice Problems on JSON File Operations
 ---------------------------------------------------------------------------------------------------------------------
+28-02-2025
+
+1. API Creation
+2. Requests Type - GET, POST
+3. Postman 
+4. Three Layer Architecture - Business, Repository, Model Layers
+5. Controller
+6. Practice Problem of creating User Registration API
+---------------------------------------------------------------------------------------------------------------------
