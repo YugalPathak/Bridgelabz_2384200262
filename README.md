@@ -179,3 +179,11 @@
 5. Controller
 6. Practice Problem of creating User Registration API
 ---------------------------------------------------------------------------------------------------------------------
+02-03-2025
+
+1. Connecting SQL Server and SSMS
+2. Context Layer
+3. Entity Layer
+4. Adding Interface and OOPs Concepts in Project
+5. Practice Problem on ORM
+---------------------------------------------------------------------------------------------------------------------
