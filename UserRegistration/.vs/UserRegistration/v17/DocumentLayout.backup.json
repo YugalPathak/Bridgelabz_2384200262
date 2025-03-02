@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\patha\\OneDrive\\Desktop\\Task1\\UserRegistration\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Interface\\IUserRegistrationRL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Service\\UserRegistrationRL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\UserRegistrationContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\DBContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Entity\\UserEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRegistrationContext.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\UserRegistrationContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\UserRegistrationContext.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\UserRegistrationContext.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\UserRegistrationContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T10:51:53.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\DBContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\DBContext.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\DBContext.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Context\\DBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T10:51:50.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T10:51:31.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IUserRegistrationRL.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Interface\\IUserRegistrationRL.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Interface\\IUserRegistrationRL.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Interface\\IUserRegistrationRL.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Interface\\IUserRegistrationRL.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T10:51:06.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRegistrationRL.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Service\\UserRegistrationRL.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Service\\UserRegistrationRL.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Service\\UserRegistrationRL.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\khant\\OneDrive\\Desktop\\Task1\\RepositoryLayer\\Service\\UserRegistrationRL.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T10:50:17.019Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

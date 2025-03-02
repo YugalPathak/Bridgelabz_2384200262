@@ -1,0 +1,67 @@
+2025-03-02 16:12:37.9080 | Info | Starting application... | 
+2025-03-02 16:12:44.7213 | Info | Now listening on: https://localhost:7000 | 
+2025-03-02 16:12:44.7542 | Info | Now listening on: http://localhost:5087 | 
+2025-03-02 16:12:44.9513 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-02 16:12:44.9513 | Info | Hosting environment: Development | 
+2025-03-02 16:12:44.9513 | Info | Content root path: C:\Users\khant\OneDrive\Desktop\Task1\UserRegistration\ | 
+2025-03-02 16:12:46.5760 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger - - | 
+2025-03-02 16:12:47.3000 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/index.html - - | 
+2025-03-02 16:12:47.3000 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger - - - 301 0 - 729.9523ms | 
+2025-03-02 16:12:47.6601 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/index.html - - - 200 - text/html;charset=utf-8 356.0331ms | 
+2025-03-02 16:12:47.7096 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui.css - - | 
+2025-03-02 16:12:47.7096 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/index.css - - | 
+2025-03-02 16:12:47.7096 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui-bundle.js - - | 
+2025-03-02 16:12:47.7096 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui-standalone-preset.js - - | 
+2025-03-02 16:12:47.7115 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/index.js - - | 
+2025-03-02 16:12:47.7115 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.1718ms | 
+2025-03-02 16:12:47.7115 | Info | Request starting HTTP/2 GET https://localhost:7000/_framework/aspnetcore-browser-refresh.js - - | 
+2025-03-02 16:12:47.7115 | Info | Request finished HTTP/2 GET https://localhost:7000/_framework/aspnetcore-browser-refresh.js - - - 200 12364 application/javascript;+charset=utf-8 9.0390ms | 
+2025-03-02 16:12:47.7115 | Info | Request starting HTTP/2 GET https://localhost:7000/_vs/browserLink - - | 
+2025-03-02 16:12:47.7359 | Info | Sending file. Request path: '/index.css'. Physical path: 'N/A' | 
+2025-03-02 16:12:47.8454 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/index.css - - - 200 202 text/css 136.0032ms | 
+2025-03-02 16:12:47.9335 | Info | Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' | 
+2025-03-02 16:12:47.9335 | Info | Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' | 
+2025-03-02 16:12:47.9335 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 234.1057ms | 
+2025-03-02 16:12:47.9335 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui.css - - - 200 154948 text/css 234.7588ms | 
+2025-03-02 16:12:48.0711 | Info | Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' | 
+2025-03-02 16:12:48.0787 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 368.7959ms | 
+2025-03-02 16:12:48.3784 | Info | Request finished HTTP/2 GET https://localhost:7000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 653.7811ms | 
+2025-03-02 16:12:48.5728 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/v1/swagger.json - - | 
+2025-03-02 16:12:48.5728 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.2806ms | 
+2025-03-02 16:13:10.7034 | Info | Request starting HTTP/2 GET https://localhost:7000/UserRegistration - - | 
+2025-03-02 16:13:11.0204 | Info | Executing endpoint 'UserRegistration.Controllers.UserRegistrationController.registrationGet (UserRegistration)' | 
+2025-03-02 16:13:11.4366 | Info | Route matched with {action = "registrationGet", controller = "UserRegistration"}. Executing controller action with signature System.String registrationGet() on controller UserRegistration.Controllers.UserRegistrationController (UserRegistration). | 
+2025-03-02 16:13:11.8378 | Info | Executing ObjectResult, writing value of type 'System.String'. | 
+2025-03-02 16:13:12.1227 | Info | Executed action UserRegistration.Controllers.UserRegistrationController.registrationGet (UserRegistration) in 317.5447ms | 
+2025-03-02 16:13:12.1747 | Info | Executed endpoint 'UserRegistration.Controllers.UserRegistrationController.registrationGet (UserRegistration)' | 
+2025-03-02 16:13:12.2211 | Info | Request finished HTTP/2 GET https://localhost:7000/UserRegistration - - - 200 - text/plain;+charset=utf-8 1517.7107ms | 
+2025-03-02 16:32:38.6087 | Info | Starting application... | 
+2025-03-02 16:32:41.8717 | Info | Now listening on: https://localhost:7000 | 
+2025-03-02 16:32:41.9056 | Info | Now listening on: http://localhost:5087 | 
+2025-03-02 16:32:42.8650 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-02 16:32:42.8650 | Info | Hosting environment: Development | 
+2025-03-02 16:32:42.8650 | Info | Content root path: C:\Users\khant\OneDrive\Desktop\Task1\UserRegistration\ | 
+2025-03-02 16:32:44.3459 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger - - | 
+2025-03-02 16:32:45.2908 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger - - - 301 0 - 951.5733ms | 
+2025-03-02 16:32:45.3117 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/index.html - - | 
+2025-03-02 16:32:45.7904 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/index.html - - - 200 - text/html;charset=utf-8 478.6417ms | 
+2025-03-02 16:32:45.9675 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui.css - - | 
+2025-03-02 16:32:45.9675 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/index.css - - | 
+2025-03-02 16:32:45.9772 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui-bundle.js - - | 
+2025-03-02 16:32:45.9772 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui-standalone-preset.js - - | 
+2025-03-02 16:32:45.9772 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/index.js - - | 
+2025-03-02 16:32:45.9952 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/index.js - - - 200 - application/javascript;charset=utf-8 17.6434ms | 
+2025-03-02 16:32:45.9952 | Info | Request starting HTTP/2 GET https://localhost:7000/_framework/aspnetcore-browser-refresh.js - - | 
+2025-03-02 16:32:46.0132 | Info | Sending file. Request path: '/index.css'. Physical path: 'N/A' | 
+2025-03-02 16:32:46.1661 | Info | Request finished HTTP/2 GET https://localhost:7000/_framework/aspnetcore-browser-refresh.js - - - 200 12364 application/javascript;+charset=utf-8 163.9488ms | 
+2025-03-02 16:32:46.1661 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/index.css - - - 200 202 text/css 190.0679ms | 
+2025-03-02 16:32:46.1661 | Info | Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' | 
+2025-03-02 16:32:46.1661 | Info | Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' | 
+2025-03-02 16:32:46.1987 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui.css - - - 200 154948 text/css 231.1861ms | 
+2025-03-02 16:32:46.1987 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 224.5601ms | 
+2025-03-02 16:32:46.2566 | Info | Request starting HTTP/2 GET https://localhost:7000/_vs/browserLink - - | 
+2025-03-02 16:32:46.3070 | Info | Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' | 
+2025-03-02 16:32:46.3070 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 331.1381ms | 
+2025-03-02 16:32:46.5583 | Info | Request finished HTTP/2 GET https://localhost:7000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 301.7285ms | 
+2025-03-02 16:32:46.7079 | Info | Request starting HTTP/2 GET https://localhost:7000/swagger/v1/swagger.json - - | 
+2025-03-02 16:32:46.7194 | Info | Request finished HTTP/2 GET https://localhost:7000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11.4395ms | 
