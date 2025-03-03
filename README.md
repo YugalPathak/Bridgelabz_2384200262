@@ -187,3 +187,10 @@
 4. Adding Interface and OOPs Concepts in Project
 5. Practice Problem on ORM
 ---------------------------------------------------------------------------------------------------------------------
+03-03-2025
+
+1. Implementing Swagger
+2. Implementing Logger (Nlog)
+3. Database Migration
+4. Practice Problem on Swagger, Logger and Database Migration
+---------------------------------------------------------------------------------------------------------------------
