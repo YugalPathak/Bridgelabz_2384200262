@@ -194,3 +194,9 @@
 3. Database Migration
 4. Practice Problem on Swagger, Logger and Database Migration
 ---------------------------------------------------------------------------------------------------------------------
+04-03-2025
+
+1. Implemented HTTP Methods - GET, PUT, DELETE, POST, PATCH
+2. Service Layer implementation
+3. Practice Problem till Use Case 3
+---------------------------------------------------------------------------------------------------------------------
