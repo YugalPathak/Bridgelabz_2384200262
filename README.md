@@ -200,3 +200,10 @@
 2. Service Layer implementation
 3. Practice Problem till Use Case 3
 ---------------------------------------------------------------------------------------------------------------------
+05-03-2025
+
+1. Implemented UC4 to UC8
+2. JWT implementation
+3. Salting and Hashing
+4. MySql Workbench connection with Asp.net
+---------------------------------------------------------------------------------------------------------------------
