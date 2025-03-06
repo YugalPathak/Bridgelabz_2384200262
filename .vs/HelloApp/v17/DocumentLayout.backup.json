@@ -1,0 +1,174 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\HelloApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{33902A62-DB58-465B-817C-7C559BD0ABE7}|..\\BusinessLayer\\BusinessLayer.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\businesslayer\\service\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180BB8BD-3C76-47AE-805F-6FF800E93251}|HelloApp.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\helloapp\\controllers\\helloappcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180BB8BD-3C76-47AE-805F-6FF800E93251}|HelloApp.csproj|solutionrelative:controllers\\helloappcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1E8785E-B1CD-4E73-86E1-370AA465A89B}|..\\RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\repositorylayer\\service\\registerhellorl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33902A62-DB58-465B-817C-7C559BD0ABE7}|..\\BusinessLayer\\BusinessLayer.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\businesslayer\\interface\\iregistrationhellobl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33902A62-DB58-465B-817C-7C559BD0ABE7}|..\\BusinessLayer\\BusinessLayer.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\businesslayer\\service\\registerhellobl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180BB8BD-3C76-47AE-805F-6FF800E93251}|HelloApp.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\helloapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180BB8BD-3C76-47AE-805F-6FF800E93251}|HelloApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1E8785E-B1CD-4E73-86E1-370AA465A89B}|..\\RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\repositorylayer\\entity\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1E8785E-B1CD-4E73-86E1-370AA465A89B}|..\\RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\repositorylayer\\context\\helloappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1E8785E-B1CD-4E73-86E1-370AA465A89B}|..\\RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\repositorylayer\\interface\\iregistrationhellorl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180BB8BD-3C76-47AE-805F-6FF800E93251}|HelloApp.csproj|c:\\users\\khant\\onedrive\\desktop\\task\\helloapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{180BB8BD-3C76-47AE-805F-6FF800E93251}|HelloApp.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RedisCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\BusinessLayer\\Service\\RedisCacheService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\Service\\RedisCacheService.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\BusinessLayer\\Service\\RedisCacheService.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\Service\\RedisCacheService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T17:05:55.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HelloAppController.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\HelloApp\\Controllers\\HelloAppController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HelloAppController.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\HelloApp\\Controllers\\HelloAppController.cs",
+              "RelativeToolTip": "Controllers\\HelloAppController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T17:34:39.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegisterHelloRL.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\RepositoryLayer\\Service\\RegisterHelloRL.cs",
+              "RelativeDocumentMoniker": "..\\RepositoryLayer\\Service\\RegisterHelloRL.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\RepositoryLayer\\Service\\RegisterHelloRL.cs",
+              "RelativeToolTip": "..\\RepositoryLayer\\Service\\RegisterHelloRL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T17:34:23.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IRegistrationHelloBL.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\BusinessLayer\\Interface\\IRegistrationHelloBL.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\Interface\\IRegistrationHelloBL.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\BusinessLayer\\Interface\\IRegistrationHelloBL.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\Interface\\IRegistrationHelloBL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T17:28:57.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegisterHelloBL.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\BusinessLayer\\Service\\RegisterHelloBL.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\Service\\RegisterHelloBL.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\BusinessLayer\\Service\\RegisterHelloBL.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\Service\\RegisterHelloBL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T17:28:19.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IRegistrationHelloRL.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\RepositoryLayer\\Interface\\IRegistrationHelloRL.cs",
+              "RelativeDocumentMoniker": "..\\RepositoryLayer\\Interface\\IRegistrationHelloRL.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\RepositoryLayer\\Interface\\IRegistrationHelloRL.cs",
+              "RelativeToolTip": "..\\RepositoryLayer\\Interface\\IRegistrationHelloRL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T17:25:37.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HelloAppContext.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\RepositoryLayer\\Context\\HelloAppContext.cs",
+              "RelativeDocumentMoniker": "..\\RepositoryLayer\\Context\\HelloAppContext.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\RepositoryLayer\\Context\\HelloAppContext.cs",
+              "RelativeToolTip": "..\\RepositoryLayer\\Context\\HelloAppContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T09:47:15.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\HelloApp\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\HelloApp\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-01T09:18:15.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "RelativeDocumentMoniker": "..\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "RelativeToolTip": "..\\RepositoryLayer\\Entity\\UserEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T09:00:35.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\HelloApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\khant\\OneDrive\\Desktop\\Task\\HelloApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T10:02:58.442Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
