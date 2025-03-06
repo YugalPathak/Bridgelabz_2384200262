@@ -207,3 +207,10 @@
 3. Salting and Hashing
 4. MySql Workbench connection with Asp.net
 ---------------------------------------------------------------------------------------------------------------------
+06-03-2025
+
+1. Implemented UC9
+2. Redis Caching
+3. Implemented Employee API
+4. Practice Problem on Redis Caching
+---------------------------------------------------------------------------------------------------------------------
