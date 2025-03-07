@@ -203,9 +203,8 @@
 05-03-2025
 
 1. Implemented UC4 to UC8
-2. JWT implementation
-3. Salting and Hashing
-4. MySql Workbench connection with Asp.net
+2. Salting and Hashing
+3. MySql Workbench connection with Asp.net
 ---------------------------------------------------------------------------------------------------------------------
 06-03-2025
 
@@ -214,3 +213,8 @@
 3. Implemented Employee API
 4. Practice Problem on Redis Caching
 ---------------------------------------------------------------------------------------------------------------------
+07-03-2025
+
+1. RabbitMQ
+2. JWT implementation
+3. Practice Problem on RabbitMQ
