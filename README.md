@@ -218,3 +218,10 @@
 1. RabbitMQ
 2. JWT implementation
 3. Practice Problem on RabbitMQ
+---------------------------------------------------------------------------------------------------------------------
+15-03-2025
+
+1. Implemented UC10 to UC14
+2. SMTP Mail Implementation
+3. HelloGreetingApplication Final Implementation
+---------------------------------------------------------------------------------------------------------------------
