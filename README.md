@@ -225,3 +225,9 @@
 2. SMTP Mail Implementation
 3. HelloGreetingApplication Final Implementation
 ---------------------------------------------------------------------------------------------------------------------
+17-03-2025
+
+1. JavaScript Basic
+2. AddressBookAPI
+3. Practice Problem on JavaScript Operations
+----------------------------------------------------------------------------------------------------------------------
