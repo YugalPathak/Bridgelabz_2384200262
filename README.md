@@ -234,6 +234,13 @@
 18-03-2025
 
 1. JavaScript Data Structure - Array , Map
-2. Practice problem on Array and Map
-3. Introduction to AngularJS
+2. Introduction to AngularJS
+3. Practice problem on Array and Map
+---------------------------------------------------------------------------------------------------------------------
+20-03-2025
+
+1. HTML, CSS
+2. Introduction to FlexBox
+3. AddressBook.js and Employee.js
+4. Practice Problems on HTML, CSS
 ---------------------------------------------------------------------------------------------------------------------
