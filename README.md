@@ -250,3 +250,9 @@
 2. Login, Register Front-End
 3. Practice Problem on Angular
 ----------------------------------------------------------------------------------------------------------------------
+24-03-2025
+
+1. Introduction to Microservices
+2. Integration of Front-end to Back-end
+3. Practice Problems on AddressBook and Employee Angular Front-End
+----------------------------------------------------------------------------------------------------------------------
